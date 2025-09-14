@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
-import { ActionSheetPageRoutingModule } from './action-sheet-routing.module';
+import { RouterModule, Routes } from '@angular/router';
 
 import { ActionSheetPage } from './action-sheet.page';
-import { ComponentsModule } from "src/app/components/components-module";
+
+const routes: Routes = [
+  { path: '', component: ActionSheetPage }
+];
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule,
-    ActionSheetPageRoutingModule,
-    ComponentsModule
-],
+    IonicModule,     // 👈 necesario para los controladores de Ionic
+    RouterModule.forChild(routes)
+  ],
   declarations: [ActionSheetPage]
 })
 export class ActionSheetPageModule {}
