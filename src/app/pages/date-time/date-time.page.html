@@ -1,0 +1,70 @@
+<app-header titulo="DateTime"></app-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Datos de Nacimiento</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Fecha de Nacimiento</ion-label>
+      <ion-datetime-button datetime="nacimiento"></ion-datetime-button>
+    </ion-item>
+
+    <ion-list-header>
+      <ion-label>Restricciones</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Min y Max</ion-label>
+      <ion-datetime-button datetime="restringido"></ion-datetime-button>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Años</ion-label>
+      <ion-datetime-button datetime="annos" date-format="YYYY"></ion-datetime-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime
+        id="nacimiento"
+        presentation="date"
+        [preferWheel]="true"
+        [(ngModel)]="fechaNacimiento"
+        [showDefaultButtons]="true"
+        doneText="Aceptar" cancelText="Cancelar">
+      </ion-datetime>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime
+        id="restringido"
+        presentation="date"
+        [preferWheel]="true"
+        [(ngModel)]="fechaRestringida"
+        [min]="minDate"
+        [max]="maxDate"
+        [showDefaultButtons]="true"
+        doneText="Aceptar" cancelText="Cancelar">
+      </ion-datetime>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime
+        id="annos"
+        presentation="year"
+        [preferWheel]="true"
+        [(ngModel)]="soloAnno"
+        [showDefaultButtons]="true"
+        doneText="Aceptar" cancelText="Cancelar">
+      </ion-datetime>
+    </ng-template>
+  </ion-modal>
+
+</ion-content>
