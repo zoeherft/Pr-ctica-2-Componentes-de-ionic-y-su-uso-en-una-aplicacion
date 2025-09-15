@@ -6,17 +6,19 @@
 
 <ion-content [fullscreen]="true">
 
- <ion-list>
-  <ion-item *ngFor="let c of components" [routerLink]="c.redirectTo" detail="true">
-    <ion-icon [name]="c.icon" slot="start" color="primary"></ion-icon>
-    {{c.name}}
-  </ion-item>
- </ion-list>
-<!-- <ion-button expand="half" routerLink="/alert">
+  <ion-list>
+    <ion-item *ngFor="let c of components" [routerLink]="c.redirectTo" detail="true">
+      <ion-icon [name]="c.icon" slot="start" color="primary"></ion-icon>
+      <ion-label>{{ c.name }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Botones individuales (ya no hacen falta porque usas la lista):
+  <ion-button expand="half" routerLink="/alert">
     Ir a Alert
   </ion-button>
   <ion-button expand="half" routerLink="/action-sheet">
     Ir a Action Sheet
   </ion-button>
--->
+  -->
 </ion-content>
