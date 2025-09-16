@@ -10,6 +10,8 @@ export class ListReorderPage implements OnInit {
 
   personajes:string[] = ['Aquaman', 'Superman', 'Batman', 'Flash', 'Mujer Maravilla', 'Cyborg'];
 
+  public isDisabled = true;
+
   constructor() { }
 
   ngOnInit() {
@@ -24,5 +26,9 @@ export class ListReorderPage implements OnInit {
 
     event.detail.complete();
     console.log(this.personajes);
+  }
+
+  toggleReorder() {
+    this.isDisabled = !this.isDisabled;
   }
 }
