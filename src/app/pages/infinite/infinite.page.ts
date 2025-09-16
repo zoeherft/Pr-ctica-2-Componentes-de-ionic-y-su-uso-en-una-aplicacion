@@ -25,7 +25,6 @@ export class InfinitePage implements OnInit {
     setTimeout(() => {
 
       if(this.data.length > 50) {
-        // En lugar de this.infiniteScroll.complete(), es mejor práctica usar event.target
         event.target.complete();
         this.infiniteScroll.disabled = true;
         return;
@@ -34,7 +33,6 @@ export class InfinitePage implements OnInit {
       const nuevoArr = Array(20);
       this.data.push(...nuevoArr);
 
-      // Es buena práctica usar el 'event' para completar la acción
       event.target.complete();
 
     }, 1500);
