@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { IonModal } from '@ionic/angular';
 
 @Component({
   selector: 'app-date-time',
@@ -8,16 +9,27 @@ import { Component } from '@angular/core';
 })
 export class DateTimePage {
 
-  // CAMBIO AQUÍ: Le damos el valor inicial "08 September 2020"
-  fechaNacimiento: string = '2020-09-08';
+  @ViewChild('customModal') customModal!: IonModal;
 
-  // Lo dejamos con la fecha actual como valor inicial
+  fechaNacimiento: string = '2020-09-08';
   fechaRestringida: string = new Date().toISOString();
   minDate: string = new Date().toISOString();
   maxDate: string = new Date(new Date().setFullYear(new Date().getFullYear() + 5)).toISOString();
-
-  // CAMBIO AQUÍ: Le damos el valor inicial "2015"
   soloAnno: string = '2015';
+  customDate: string = new Date().toISOString();
+
 
   constructor() { }
+
+  handleHola() {
+    console.log('Botón HOLA presionado');
+    console.log('La fecha seleccionada es:', this.customDate);
+    this.customModal.dismiss();
+  }
+
+  handleMundo() {
+    console.log('Botón MUNDO presionado');
+    console.log('La fecha seleccionada es:', this.customDate);
+    this.customModal.dismiss(this.customDate);
+  }
 }

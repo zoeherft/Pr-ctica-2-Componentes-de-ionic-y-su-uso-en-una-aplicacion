@@ -24,47 +24,68 @@
       <ion-label>Años</ion-label>
       <ion-datetime-button datetime="annos" date-format="YYYY"></ion-datetime-button>
     </ion-item>
+
+    <ion-item>
+      <ion-label>Custom Options</ion-label>
+      <ion-datetime-button datetime="custom"></ion-datetime-button>
+    </ion-item>
   </ion-list>
+</ion-content> <ion-modal [keepContentsMounted]="true">
+  <ng-template>
+    <ion-datetime
+      id="nacimiento"
+      presentation="date"
+      [preferWheel]="true"
+      [(ngModel)]="fechaNacimiento"
+      [showDefaultButtons]="true"
+      doneText="Aceptar" cancelText="Cancelar">
+    </ion-datetime>
+  </ng-template>
+</ion-modal>
 
-  <ion-modal [keepContentsMounted]="true">
-    <ng-template>
-      <ion-datetime
-        id="nacimiento"
-        presentation="date"
-        [preferWheel]="true"
-        [(ngModel)]="fechaNacimiento"
-        [showDefaultButtons]="true"
-        doneText="Aceptar" cancelText="Cancelar">
-      </ion-datetime>
-    </ng-template>
-  </ion-modal>
+<ion-modal [keepContentsMounted]="true">
+  <ng-template>
+    <ion-datetime
+      id="restringido"
+      presentation="date"
+      [preferWheel]="true"
+      [(ngModel)]="fechaRestringida"
+      [min]="minDate"
+      [max]="maxDate"
+      [showDefaultButtons]="true"
+      doneText="Aceptar" cancelText="Cancelar">
+    </ion-datetime>
+  </ng-template>
+</ion-modal>
 
-  <ion-modal [keepContentsMounted]="true">
-    <ng-template>
-      <ion-datetime
-        id="restringido"
-        presentation="date"
-        [preferWheel]="true"
-        [(ngModel)]="fechaRestringida"
-        [min]="minDate"
-        [max]="maxDate"
-        [showDefaultButtons]="true"
-        doneText="Aceptar" cancelText="Cancelar">
-      </ion-datetime>
-    </ng-template>
-  </ion-modal>
+<ion-modal [keepContentsMounted]="true">
+  <ng-template>
+    <ion-datetime
+      id="annos"
+      presentation="year"
+      [preferWheel]="true"
+      [(ngModel)]="soloAnno"
+      [showDefaultButtons]="true"
+      doneText="Aceptar" cancelText="Cancelar">
+    </ion-datetime>
+  </ng-template>
+</ion-modal>
 
-  <ion-modal [keepContentsMounted]="true">
-    <ng-template>
-      <ion-datetime
-        id="annos"
-        presentation="year"
-        [preferWheel]="true"
-        [(ngModel)]="soloAnno"
-        [showDefaultButtons]="true"
-        doneText="Aceptar" cancelText="Cancelar">
-      </ion-datetime>
-    </ng-template>
-  </ion-modal>
-
-</ion-content>
+<ion-modal [keepContentsMounted]="true" #customModal>
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="end">
+          <ion-button (click)="handleHola()">Hola</ion-button>
+          <ion-button (click)="handleMundo()">Mundo</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-datetime
+      id="custom"
+      presentation="date"
+      [preferWheel]="true"
+      [(ngModel)]="customDate">
+    </ion-datetime>
+  </ng-template>
+</ion-modal>
