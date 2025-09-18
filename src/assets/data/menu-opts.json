@@ -73,5 +73,10 @@
     "icon": "phone-portrail-outline",
     "name": "Modal",
     "redirectTo": "/modal"
+  },
+  {
+    "icon": "tablet-portrail-outline",
+    "name": "popover",
+    "redirectTo": "/popover"
   }
 ]
