@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
 @Component({
@@ -9,6 +9,9 @@ import { ModalController } from '@ionic/angular';
 })
 export class ModalInfoPage implements OnInit {
 
+  @Input() nombre: string | undefined;
+  @Input() pais: string | undefined;
+
   constructor(private modalCtrl: ModalController) { }
 
   ngOnInit() {
@@ -16,6 +19,13 @@ export class ModalInfoPage implements OnInit {
 
   salirSinArgumentos(){
     this.modalCtrl.dismiss();
+  }
+
+  salirConArgumentos(){
+    this.modalCtrl.dismiss({
+      nombre: 'Eunwoo',
+      pais: 'Corea del Sur'
+    });
   }
 
 }
