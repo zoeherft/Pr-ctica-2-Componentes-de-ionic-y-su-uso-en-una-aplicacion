@@ -23,12 +23,23 @@ export class AppComponent {
     this.initializeApp();
   }
 
-  initializeApp() {
+  /*initializeApp() {
     this.platform.ready().then(() => {
       // Ocultar splash y cambiar status bar
       StatusBar.setStyle({ style: Style.Default });
       SplashScreen.hide();
+      // Cargar menu
+      this.componentes = this.dataService.getMenuOpts();
+    });
+  }*/
+    initializeApp() {
+    this.platform.ready().then(() => {
+      if (this.platform.is('capacitor')) { // Solo si estamos en emulador
+        StatusBar.setStyle({ style: Style.Default });
+        SplashScreen.hide();
+      }
       this.componentes = this.dataService.getMenuOpts();
     });
   }
 }
+
