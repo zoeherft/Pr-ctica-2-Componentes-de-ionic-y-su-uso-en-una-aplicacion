@@ -14,7 +14,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule,     // 👈 necesario para los controladores de Ionic
+    IonicModule,      
     RouterModule.forChild(routes)
   ],
   declarations: [ActionSheetPage]
