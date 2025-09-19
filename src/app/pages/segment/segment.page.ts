@@ -10,16 +10,18 @@ import { Observable } from 'rxjs';
 })
 export class SegmentPage implements OnInit {
 
-  superHeroes!: Observable<any>;
+  superHeroes!: Observable<any[]>;
+  // '' => muestra todos
+  publisher: string = '';
 
-  constructor( private DataService: DataService ) { }
+  constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    this.superHeroes = this.DataService.getHeroes();
+    this.superHeroes = this.dataService.getHeroes();
   }
 
-  segmentChanged(event: any) {
-    console.log(event.detail.value);
+  segmentChanged(event: CustomEvent): void {
+    const val = (event.detail as any).value;
+    this.publisher = (val === 'todos') ? '' : val;
   }
-
 }
