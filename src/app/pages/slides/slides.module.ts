@@ -8,13 +8,11 @@ import { SlidesPageRoutingModule } from './slides-routing.module';
 
 import { SlidesPage } from './slides.page';
 
-
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-
     SlidesPageRoutingModule
   ],
   declarations: [SlidesPage]
