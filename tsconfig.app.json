@@ -1,9 +1,12 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": []
+    "types": [],
+    "target": "ES2022",
+    "module": "ES2020",
+    "lib": ["ES2022", "DOM"],
+    "skipLibCheck": true
   },
   "files": [
     "src/main.ts",
