@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkapp=self.webpackChunkapp||[]).push([[2980],{2980:(D,o,a)=>{a.r(o),a.d(o,{ModalInfoPageModule:()=>P});var l=a(2200),E=a(4341),M=a(9893),_=a(2615),s=a(3664);let P=(()=>{var t;class n{static#a=t=()=>(this.\u0275fac=function(u){return new(u||n)},this.\u0275mod=s.$C({type:n}),this.\u0275inj=_.G2t({imports:[l.MD,E.YN,M.bv]}))}return t(),n})()}}]);
